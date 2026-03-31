@@ -15,19 +15,21 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="scroll-smooth">
+    <>
       <Navbar />
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <FeaturesSection />
-      <LiveExampleSection />
-      <WhyMattersSection />
-      <UseCasesSection />
-      <DevelopersSection />
-      <HowItWorksSection />
-      <ConfluxSection />
+      <main className="scroll-smooth">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <FeaturesSection />
+        <LiveExampleSection />
+        <WhyMattersSection />
+        <UseCasesSection />
+        <DevelopersSection />
+        <HowItWorksSection />
+        <ConfluxSection />
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }

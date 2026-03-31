@@ -11,6 +11,18 @@ const navLinks = [
   { label: "Conflux", href: "#conflux" },
 ]
 
+function NavLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className="text-sm text-muted-foreground hover:text-foreground px-2 py-2.5 rounded-md hover:bg-secondary transition-colors font-medium"
+    >
+      {children}
+    </a>
+  )
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -20,6 +32,8 @@ export function Navbar() {
     window.addEventListener("scroll", handler, { passive: true })
     return () => window.removeEventListener("scroll", handler)
   }, [])
+
+  const closeMenu = () => setOpen(false)
 
   return (
     <header
@@ -85,19 +99,14 @@ export function Navbar() {
           aria-label="Mobile navigation"
         >
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="text-sm text-muted-foreground hover:text-foreground px-2 py-2.5 rounded-md hover:bg-secondary transition-colors font-medium"
-            >
+            <NavLink key={link.href} href={link.href} onClick={closeMenu}>
               {link.label}
-            </a>
+            </NavLink>
           ))}
           <div className="pt-2 mt-1 border-t border-border">
             <a
               href="#connect"
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
               className="block text-sm px-4 py-2.5 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition-opacity font-medium text-center"
             >
               Connect Wallet

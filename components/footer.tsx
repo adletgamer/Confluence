@@ -1,9 +1,3 @@
-const footerLinks = [
-  { label: "Docs", href: "#developers" },
-  { label: "GitHub", href: "#github" },
-  { label: "Contact", href: "#contact" },
-]
-
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -21,20 +15,31 @@ export function Footer() {
 
         {/* Links */}
         <nav className="flex items-center gap-8" aria-label="Footer navigation">
-          {footerLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
-            >
-              {link.label}
-            </a>
-          ))}
+          <a
+            href="#developers"
+            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
+          >
+            Docs
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
+          >
+            GitHub
+          </a>
+          <a
+            href="mailto:contact@confluxi.io"
+            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Legal */}
         <p className="text-xs text-primary-foreground/30">
-          &copy; {new Date().getFullYear()} Confluxi. All rights reserved.
+          &copy; 2025 Confluxi. All rights reserved.
         </p>
       </div>
     </footer>
