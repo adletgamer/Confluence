@@ -21,13 +21,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler)
   }, [])
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    setOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
@@ -51,7 +44,6 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
               {link.label}
@@ -63,7 +55,6 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <a
             href="#developers"
-            onClick={(e) => handleNavClick(e, "#developers")}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
           >
             Docs
@@ -97,7 +88,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
+              onClick={() => setOpen(false)}
               className="text-sm text-muted-foreground hover:text-foreground px-2 py-2.5 rounded-md hover:bg-secondary transition-colors font-medium"
             >
               {link.label}

@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck, TrendingUp, Clock, Activity } from "lucide-react"
+import { ArrowRight, ShieldCheck, TrendingUp, Activity } from "lucide-react"
 
 function ScoreMockUI() {
   const riskDrivers = [
@@ -79,11 +79,6 @@ function ScoreMockUI() {
 }
 
 export function HeroSection() {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-
   return (
     <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-background" aria-labelledby="hero-heading">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
@@ -109,7 +104,6 @@ export function HeroSection() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a
                 href="#live-example"
-                onClick={(e) => handleScroll(e, "#live-example")}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 See Live Example
@@ -117,7 +111,6 @@ export function HeroSection() {
               </a>
               <a
                 href="#developers"
-                onClick={(e) => handleScroll(e, "#developers")}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
               >
                 View API Docs
