@@ -1,46 +1,42 @@
+import Link from "next/link"
+
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
-        {/* Brand */}
-        <div className="flex items-center gap-2.5">
-          <span className="inline-flex items-center justify-center w-7 h-7 rounded-md bg-primary-foreground/12 text-primary-foreground text-[11px] font-bold">
-            Cx
-          </span>
-          <div>
-            <span className="text-sm font-bold block">Confluxi</span>
-            <span className="text-[11px] text-primary-foreground/40">On-chain credit scoring</span>
+    <footer className="bg-primary text-primary-foreground py-12">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          {/* Logo */}
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-sm">Cx</span>
+            </div>
+            <span className="font-semibold text-lg">Confluxi</span>
           </div>
+
+          {/* Links */}
+          <nav className="flex flex-wrap items-center gap-6">
+            <a href="#product" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Product
+            </a>
+            <a href="#workflow" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Workflow
+            </a>
+            <a href="#developers" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Developers
+            </a>
+            <a href="#docs" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Docs
+            </a>
+            <Link href="/dashboard" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+              Open App
+            </Link>
+          </nav>
         </div>
 
-        {/* Links */}
-        <nav className="flex items-center gap-8" aria-label="Footer navigation">
-          <a
-            href="#developers"
-            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
-          >
-            Docs
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
-          >
-            GitHub
-          </a>
-          <a
-            href="mailto:contact@confluxi.io"
-            className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
-          >
-            Contact
-          </a>
-        </nav>
-
-        {/* Legal */}
-        <p className="text-xs text-primary-foreground/30">
-          &copy; 2025 Confluxi. All rights reserved.
-        </p>
+        <div className="mt-8 pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-primary-foreground/50">
+          <p>2026 Confluxi. All rights reserved.</p>
+          <p>Built for programmable finance.</p>
+        </div>
       </div>
     </footer>
   )

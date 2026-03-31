@@ -1,33 +1,27 @@
 import { Navbar } from "@/components/navbar"
-import { HeroSection } from "@/components/hero-section"
-import {
-  ProblemSection,
-  SolutionSection,
-  FeaturesSection,
-  LiveExampleSection,
-  WhyMattersSection,
-  UseCasesSection,
-  DevelopersSection,
-  HowItWorksSection,
-} from "@/components/content-sections"
-import { ConfluxSection } from "@/components/conflux-section"
 import { Footer } from "@/components/footer"
+import {
+  HeroSection,
+  ProblemSection,
+  WorkflowSection,
+  ProductValueSection,
+  WhoSection,
+  ProductPreviewSection,
+  FinalCTASection,
+} from "@/components/home-sections"
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="scroll-smooth">
+      <main>
         <HeroSection />
         <ProblemSection />
-        <SolutionSection />
-        <FeaturesSection />
-        <LiveExampleSection />
-        <WhyMattersSection />
-        <UseCasesSection />
-        <DevelopersSection />
-        <HowItWorksSection />
-        <ConfluxSection />
+        <WorkflowSection />
+        <ProductValueSection />
+        <WhoSection />
+        <ProductPreviewSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </>
