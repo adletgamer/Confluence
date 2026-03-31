@@ -5,13 +5,6 @@ const footerLinks = [
 ]
 
 export function Footer() {
-  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith("#")) return
-    e.preventDefault()
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
-  }
-
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -32,7 +25,6 @@ export function Footer() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNav(e, link.href)}
               className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors font-medium"
             >
               {link.label}
