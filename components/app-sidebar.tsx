@@ -2,13 +2,14 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, FileText, ShieldCheck, History, HelpCircle, Lock } from "lucide-react"
+import { LayoutDashboard, FileText, ShieldCheck, History, User, HelpCircle, Lock } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const mainNav = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/loans/new", label: "Loans", icon: FileText },
   { href: "/verification", label: "Verification", icon: ShieldCheck },
+  { href: "/profile", label: "My Profile", icon: User },
   { href: "/audit", label: "Audit Trail", icon: History },
 ]
 

@@ -42,11 +42,11 @@ export function Navbar() {
 
           {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/dashboard">View Demo</Link>
+            <Button variant="ghost" size="sm" asChild className="rounded-[10px]">
+              <Link href="/auth">Sign In</Link>
             </Button>
-            <Button size="sm" asChild>
-              <Link href="/dashboard">Open App</Link>
+            <Button size="sm" asChild className="rounded-[10px] font-semibold shadow-lg shadow-primary/30">
+              <Link href="/dashboard">Demo →</Link>
             </Button>
           </div>
 
