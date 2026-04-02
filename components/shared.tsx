@@ -10,11 +10,11 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, action }: PageHeaderProps) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-      <div>
-        <h1 className="text-2xl font-semibold text-foreground tracking-tight">{title}</h1>
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-10 pb-6 border-b border-border/50">
+      <div className="flex-1">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">{title}</h1>
         {subtitle && (
-          <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
+          <p className="mt-2 text-base text-muted-foreground">{subtitle}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}
@@ -32,17 +32,17 @@ interface MetricCardProps {
 
 export function MetricCard({ label, value, subtitle, icon }: MetricCardProps) {
   return (
-    <div className="bg-card border border-border rounded-xl p-5">
+    <div className="bg-card border border-border rounded-[20px] p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
       <div className="flex items-start justify-between">
-        <div>
-          <p className="text-sm text-muted-foreground font-medium">{label}</p>
-          <p className="mt-1 text-2xl font-semibold text-foreground">{value}</p>
+        <div className="flex-1">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</p>
+          <p className="mt-2 text-3xl font-semibold text-foreground tracking-tight">{value}</p>
           {subtitle && (
-            <p className="mt-1 text-xs text-muted-foreground">{subtitle}</p>
+            <p className="mt-1.5 text-xs text-muted-foreground">{subtitle}</p>
           )}
         </div>
         {icon && (
-          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground">
+          <div className="w-12 h-12 rounded-[14px] bg-secondary flex items-center justify-center text-primary/60 ml-3 shrink-0">
             {icon}
           </div>
         )}
@@ -58,11 +58,22 @@ interface StatusBadgeProps {
 }
 
 export function StatusBadge({ status, className }: StatusBadgeProps) {
+  const statusColors = {
+    "pending": "bg-amber-50 text-amber-700 border-amber-200",
+    "active": "bg-emerald-50 text-emerald-700 border-emerald-200",
+    "completed": "bg-blue-50 text-blue-700 border-blue-200",
+    "verified": "bg-emerald-50 text-emerald-700 border-emerald-200",
+    "in-progress": "bg-blue-50 text-blue-700 border-blue-200",
+    "rejected": "bg-red-50 text-red-700 border-red-200",
+  }
+  
+  const colorClass = statusColors[status as keyof typeof statusColors] || statusColors["pending"]
+  
   return (
     <span
       className={cn(
-        "inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium border capitalize",
-        getStatusColor(status),
+        "inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold border capitalize transition-colors",
+        colorClass,
         className
       )}
     >
@@ -125,11 +136,11 @@ interface FeatureCardProps {
 
 export function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
-    <div className="bg-card border border-border rounded-xl p-6 hover:shadow-sm transition-shadow">
-      <div className="w-11 h-11 rounded-lg bg-secondary flex items-center justify-center text-foreground mb-4">
+    <div className="bg-card border border-border rounded-[20px] p-6 hover:shadow-md transition-all duration-200 hover:border-border">
+      <div className="w-12 h-12 rounded-[12px] bg-secondary flex items-center justify-center text-primary/60 mb-5">
         {icon}
       </div>
-      <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
+      <h3 className="text-base font-semibold text-foreground mb-2.5">{title}</h3>
       <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   )

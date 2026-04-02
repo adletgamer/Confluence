@@ -51,23 +51,23 @@ export default function DashboardPage() {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Recent Loans */}
         <div className="lg:col-span-2">
-          <div className="bg-card border border-border rounded-xl">
-            <div className="px-5 py-4 border-b border-border flex items-center justify-between">
-              <h2 className="text-base font-semibold text-foreground">Recent Loans</h2>
-              <Link href="/loans/new" className="text-sm text-accent hover:underline">
-                View all
+          <div className="bg-card border border-border rounded-[20px] shadow-sm overflow-hidden">
+            <div className="px-6 py-5 border-b border-border/50 flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-foreground">Recent Loans</h2>
+              <Link href="/loans/new" className="text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                View all →
               </Link>
             </div>
-            <div className="divide-y divide-border">
+            <div className="divide-y divide-border/50">
               {mockLoans.map((loan) => (
                 <Link
                   key={loan.id}
                   href={`/loans/${loan.id}`}
-                  className="flex items-center justify-between px-5 py-4 hover:bg-secondary/50 transition-colors"
+                  className="flex items-center justify-between px-6 py-4 hover:bg-secondary/40 transition-colors duration-200"
                 >
-                  <div>
-                    <p className="text-sm font-medium text-foreground">{loan.title}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-foreground">{loan.title}</p>
+                    <p className="text-xs text-muted-foreground mt-1">
                       {loan.amount.toLocaleString()} {loan.currency}
                     </p>
                   </div>
@@ -79,20 +79,18 @@ export default function DashboardPage() {
         </div>
 
         {/* Credit Factors */}
-        <div className="bg-card border border-border rounded-xl">
-          <div className="px-5 py-4 border-b border-border">
-            <h2 className="text-base font-semibold text-foreground">Credit Factors</h2>
-          </div>
-          <div className="p-5 space-y-4">
+        <div className="bg-card border border-border rounded-[20px] shadow-sm p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-6">Credit Factors</h2>
+          <div className="space-y-6">
             {mockCreditFactors.map((factor) => (
               <div key={factor.label}>
-                <div className="flex items-center justify-between text-sm mb-1.5">
-                  <span className="text-muted-foreground">{factor.label}</span>
-                  <span className="font-medium text-foreground">{factor.score}</span>
+                <div className="flex items-center justify-between text-sm mb-2.5">
+                  <span className="font-medium text-foreground">{factor.label}</span>
+                  <span className="font-semibold text-primary">{factor.score}%</span>
                 </div>
-                <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                <div className="h-2.5 bg-secondary rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-accent rounded-full transition-all"
+                    className="h-full bg-primary rounded-full transition-all duration-300"
                     style={{ width: `${factor.score}%` }}
                   />
                 </div>

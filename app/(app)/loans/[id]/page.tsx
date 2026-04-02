@@ -65,11 +65,11 @@ export default async function LoanDetailPage({ params }: { params: Promise<{ id:
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Loan Details */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-card border border-border rounded-xl">
-            <div className="px-5 py-4 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground">Loan Details</h2>
+          <div className="bg-card border border-border rounded-[20px] shadow-sm overflow-hidden">
+            <div className="px-6 py-5 border-b border-border/50">
+              <h2 className="text-lg font-semibold text-foreground">Loan Details</h2>
             </div>
-            <div className="p-5 space-y-4">
+            <div className="p-6 space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground uppercase tracking-wide mb-1">Borrower</p>

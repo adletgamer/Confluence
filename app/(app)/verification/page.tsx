@@ -32,22 +32,23 @@ export default function VerificationPage() {
         }
       />
 
-      {/* Progress Overview */}
-      <div className="bg-card border border-border rounded-xl p-5 mb-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+      {/* Progress Overview — Premium Hero Card */}
+      <div className="bg-card border border-border rounded-[20px] shadow-sm p-8 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
           <div>
-            <p className="text-sm text-muted-foreground">Verification Progress</p>
-            <p className="text-2xl font-semibold text-foreground mt-1">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Verification Progress</p>
+            <p className="text-3xl font-semibold text-foreground mt-2">
               {completedCount} of {totalCount} completed
             </p>
           </div>
           <div className="text-right">
-            <span className="text-3xl font-bold text-accent">{progressPercent}%</span>
+            <span className="text-4xl font-bold text-primary">{progressPercent}%</span>
+            <p className="text-xs text-muted-foreground mt-1">Overall progress</p>
           </div>
         </div>
         <div className="h-3 bg-secondary rounded-full overflow-hidden">
           <div
-            className="h-full bg-accent rounded-full transition-all"
+            className="h-full bg-primary rounded-full transition-all duration-500"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -56,15 +57,15 @@ export default function VerificationPage() {
       <div className="grid lg:grid-cols-3 gap-6">
         {/* Verification Checklist */}
         <div className="lg:col-span-2">
-          <div className="bg-card border border-border rounded-xl">
-            <div className="px-5 py-4 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground">Verification Checklist</h2>
+          <div className="bg-card border border-border rounded-[20px] shadow-sm overflow-hidden">
+            <div className="px-6 py-5 border-b border-border/50">
+              <h2 className="text-lg font-semibold text-foreground">Verification Checklist</h2>
             </div>
-            <div className="divide-y divide-border">
+            <div className="divide-y divide-border/50">
               {mockVerificationItems.map((item) => (
-                <div key={item.id} className="px-5 py-5">
+                <div key={item.id} className="px-6 py-5 hover:bg-secondary/30 transition-colors duration-200">
                   <div className="flex items-start gap-4">
-                    <div className="mt-0.5 shrink-0">
+                    <div className="mt-0.5 shrink-0 flex-none">
                       {getStatusIcon(item.status)}
                     </div>
                     <div className="flex-1 min-w-0">

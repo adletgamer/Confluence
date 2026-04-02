@@ -25,26 +25,26 @@ export default function NewLoanPage() {
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Form */}
         <div className="lg:col-span-2">
-          <div className="bg-card border border-border rounded-xl p-6">
-            <form className="space-y-6">
+          <div className="bg-card border border-border rounded-[20px] p-7 shadow-sm">
+            <form className="space-y-7">
               {/* Loan Title */}
               <div>
-                <label htmlFor="title" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="title" className="block text-sm font-semibold text-foreground mb-2.5">
                   Loan Title
                 </label>
                 <Input
                   id="title"
                   placeholder="e.g., Working Capital Facility"
-                  className="w-full"
+                  className="w-full rounded-[12px] border-border"
                 />
-                <p className="mt-1.5 text-xs text-muted-foreground">
+                <p className="mt-2 text-xs text-muted-foreground">
                   A descriptive name for this loan request
                 </p>
               </div>
 
               {/* Amount */}
               <div>
-                <label htmlFor="amount" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="amount" className="block text-sm font-semibold text-foreground mb-2.5">
                   Loan Amount
                 </label>
                 <div className="flex gap-3">
@@ -52,9 +52,9 @@ export default function NewLoanPage() {
                     id="amount"
                     type="number"
                     placeholder="50,000"
-                    className="flex-1"
+                    className="flex-1 rounded-[12px] border-border"
                   />
-                  <select className="px-3 py-2 border border-border rounded-lg bg-background text-sm font-medium">
+                  <select className="px-4 py-2 border border-border rounded-[12px] bg-background text-sm font-medium hover:border-border/80 transition-colors">
                     <option>USDC</option>
                     <option>USDT</option>
                     <option>DAI</option>
@@ -64,12 +64,12 @@ export default function NewLoanPage() {
 
               {/* Duration */}
               <div>
-                <label htmlFor="duration" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="duration" className="block text-sm font-semibold text-foreground mb-2.5">
                   Loan Duration
                 </label>
                 <select
                   id="duration"
-                  className="w-full px-3 py-2 border border-border rounded-lg bg-background text-sm"
+                  className="w-full px-4 py-2.5 border border-border rounded-[12px] bg-background text-sm font-medium hover:border-border/80 transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
                 >
                   <option>30 days</option>
                   <option>60 days</option>
@@ -81,14 +81,14 @@ export default function NewLoanPage() {
 
               {/* Purpose */}
               <div>
-                <label htmlFor="purpose" className="block text-sm font-medium text-foreground mb-2">
+                <label htmlFor="purpose" className="block text-sm font-semibold text-foreground mb-2.5">
                   Purpose
                 </label>
                 <textarea
                   id="purpose"
                   rows={4}
                   placeholder="Describe the purpose of this loan..."
-                  className="w-full px-3 py-2 border border-border rounded-lg bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full px-4 py-2.5 border border-border rounded-[12px] bg-background text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
 
