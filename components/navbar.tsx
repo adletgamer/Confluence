@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { WalletConnectButton } from "@/components/wallet-connect-button"
 
 const navLinks = [
   { href: "#product", label: "Product" },
@@ -42,8 +41,10 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-4">
-            <WalletConnectButton />
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="ghost" size="sm" asChild className="rounded-[10px]">
+              <Link href="/auth">Sign In</Link>
+            </Button>
             <Button size="sm" asChild className="rounded-[10px] font-semibold shadow-lg shadow-primary/30">
               <Link href="/dashboard">Demo →</Link>
             </Button>
