@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { WalletProvider } from '@/components/wallet-provider'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -37,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <WalletProvider>
+          {children}
+        </WalletProvider>
         <Analytics />
       </body>
     </html>

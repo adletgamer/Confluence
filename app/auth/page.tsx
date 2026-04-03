@@ -1,7 +1,10 @@
+'use client'
+
 import Link from "next/link"
 import { ArrowRight, Wallet, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { WalletConnectButton } from "@/components/wallet-connect-button"
 
 export default function AuthPage() {
   return (
@@ -85,13 +88,12 @@ export default function AuthPage() {
                 </div>
                 <h2 className="text-lg font-semibold text-foreground">Connect Wallet</h2>
               </div>
-              <Button
-                variant="outline"
-                className="w-full rounded-[12px] h-11 font-semibold border-2 hover:bg-primary/5"
-              >
-                <Wallet size={16} className="mr-2" />
-                Connect MetaMask / Fluent
-              </Button>
+              <div className="w-full flex justify-center">
+                <WalletConnectButton />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-3">
+                Supports MetaMask, Coinbase Wallet, WalletConnect and more
+              </p>
             </div>
           </div>
         </div>
